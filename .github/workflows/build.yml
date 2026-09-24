@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout do repositorio
         uses: actions/checkout@v4
@@ -24,10 +24,9 @@ jobs:
       - name: Compilar com PyInstaller
         run: |
           pyinstaller --noconsole --onefile --name="Darkkan-Sistema-Windows" main.py
-          ls -la dist/
 
       - name: Guardar executavel como Artefacto
         uses: actions/upload-artifact@v4
         with:
           name: Darkkan-Sistema-Windows
-          path: dist/
+          path: dist/Darkkan-Sistema-Windows.exe
