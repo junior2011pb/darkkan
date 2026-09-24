@@ -23,13 +23,10 @@ jobs:
 
       - name: Compilar com PyInstaller
         run: |
-          pyinstaller --noconsole --onefile --clean main.py
-
-      - name: Verificar ficheiros gerados
-        run: ls -la dist/
+          pyinstaller --noconsole --onefile --name="Darkkan-Sistema-Windows" main.py
 
       - name: Guardar executavel como Artefacto
         uses: actions/upload-artifact@v4
         with:
           name: Darkkan-Sistema-Windows
-          path: dist/main.exe
+          path: dist/*.exe
